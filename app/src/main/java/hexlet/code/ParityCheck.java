@@ -3,37 +3,25 @@ package hexlet.code;
 import java.util.Scanner;
 public class ParityCheck {
     public static void Parity() {
-        var positiveAnswer = "yes";
-        var negativeAnswer = "no";
-        int randomNumber1 = (int) (Math.random() * 20 + 1);
-        int randomNumber2 = (int) (Math.random() * 20 + 1);
-        int randomNumber3 = (int) (Math.random() * 20 + 1);
+        Cli.greeting();
+        Scanner number = new Scanner(System.in);
+        int randomNumber = Randomizer.getRandom();
 
-        var cicle = 3;
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.println("Answer '" + positiveAnswer + "' if the number is even, otherwise answer '" + negativeAnswer + "'.");
-        System.out.println("Question: " + randomNumber1);
-        System.out.print("Your answer: ");
-        String userAnswer1 = scanner.next();
-        if ((userAnswer1.equals(positiveAnswer) && (randomNumber1 % 2 == 0)) || ((userAnswer1.equals(negativeAnswer)) && (randomNumber1 % 2 != 0))) {
-            System.out.println("Correct!");
-            System.out.println("Question: " + randomNumber2);
+        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
+        for (var i = 0; i < 3; i++) {
+            System.out.println("Question: " + randomNumber);
             System.out.print("Your answer: ");
-            String userAnswer2 = scanner.next();
-            if ((userAnswer2.equals(positiveAnswer) && (randomNumber2 % 2 == 0)) || ((userAnswer2.equals(negativeAnswer)) && (randomNumber2 % 2 != 0))) {
+            String userAnswer = number.next().toLowerCase();
+            if ((userAnswer.equals("yes") && (randomNumber % 2 == 0)) || ((userAnswer.equals("no")) && (randomNumber % 2 != 0))) {
                 System.out.println("Correct!");
-                System.out.println("Question: " + randomNumber3);
-                System.out.print("Your answer: ");
-                String userAnswer3 = scanner.next();
-                if ((userAnswer3.equals(positiveAnswer) && (randomNumber3 % 2 == 0)) || ((userAnswer3.equals(negativeAnswer)) && (randomNumber3 % 2 != 0))) {
-                    System.out.println("Correct!");
-                    System.out.println("Congratulations, " + Cli.userName + "!");
+            } else {
+                if (randomNumber % 2 == 0) {
+                    System.out.println(userAnswer + " is wrong answer ;(. Correct answer was 'yes'. \nLet's try again, " + Cli.userName + "!");
+                } else {
+                    System.out.println(userAnswer + " is wrong answer ;(. Correct answer was 'no'. \nLet's try again, " + Cli.userName + "!");
                 }
             }
-        } else {
-            System.out.println("'" + positiveAnswer + "'" + " is wrong answer ;(. Correct answer was " + "'" + negativeAnswer + "'");
-            System.out.println("Let's try again, ");
+            System.out.println("Congratulations, " + Cli.userName + "!");
         }
     }
 }
