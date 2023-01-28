@@ -1,8 +1,8 @@
 package hexlet.code;
 
 import java.util.Scanner;
-public class ParityCheck {
-    public static void isParity() {
+public class Even {
+    public static void isEven() {
         Scanner number = new Scanner(System.in);
         Scanner user = new Scanner(System.in);
 
@@ -27,6 +27,7 @@ public class ParityCheck {
                 break;
             } else {
                 System.out.println(userAnswer + " is wrong answer ;(. Correct answer was 'no'. \nLet's try again, " + userName + "!");
+                break;
             }
         }
         if (count == 3) {
