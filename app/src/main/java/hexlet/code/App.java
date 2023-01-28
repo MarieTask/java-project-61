@@ -16,7 +16,8 @@ public class App {
             Cli.greeting();
         }
         if (number.equals("2")) {
-            ParityCheck.Parity();
+            System.out.println("Welcome to the Brain Games!");
+            ParityCheck.isParity();
         }
         scanner.close();
     }
