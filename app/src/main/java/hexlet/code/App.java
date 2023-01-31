@@ -1,8 +1,7 @@
 package hexlet.code;
 
-import hexlet.code.games.Calc;
 import hexlet.code.games.Even;
-import hexlet.code.games.CalcNew;
+import hexlet.code.games.Calc;
 
 import java.util.Scanner;
 
@@ -27,11 +26,7 @@ public class App {
         }
         if (number.equals("3")) {
             System.out.println("Welcome to the Brain Games!");
-            Calc.isExpressionTrue();
-        }
-        if (number.equals("4")) {
-            System.out.println("Welcome to the Brain Games!");
-            CalcNew.calcGame();
+            Calc.calcGame();
         }
         scanner.close();
     }
