@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class Engine {
     public static void startGames() {
+        var final MAX_ROUND = 3;
         Scanner user = new Scanner(System.in);
         System.out.print("May I have your name? ");
         String userName = user.next();
@@ -12,7 +13,7 @@ public class Engine {
 
         Scanner number = new Scanner(System.in);
         int count = 0;
-        for (var i = 0; i < 3; i++) {
+        for (var i = 0; i < MAX_ROUND; i++) {
             System.out.println("Question: " + );
             System.out.print("Your answer: ");
             String userAnswer = number.next().toLowerCase();
