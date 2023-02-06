@@ -28,13 +28,14 @@ public class GCD {
         }
     }
     public static void isGCD() {
+        var rule = "Find the greatest common divisor of given numbers.";
         Scanner number = new Scanner(System.in);
         Scanner user = new Scanner(System.in);
 
         System.out.print("May I have your name? ");
         String userName = user.next();
         System.out.println("Hello, " + userName + "!");
-        System.out.println("Find the greatest common divisor of given numbers.");
+        System.out.println(rule);
         int count = 0;
         for (var i = 0; i < 3; i++) {
             int randomNumber1 = Randomizer.getRandom();

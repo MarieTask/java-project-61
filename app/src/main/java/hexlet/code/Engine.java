@@ -10,6 +10,7 @@ public class Engine {
         System.out.print("May I have your name? ");
         String userName = user.next();
         System.out.println("Hello, " + userName + "!");
+        System.out.println(rule);
 
         Scanner number = new Scanner(System.in);
         int count = 0;

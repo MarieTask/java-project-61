@@ -19,13 +19,14 @@ public class Calc {
     }
 
     public static void calcGame() {
+        var rule = "What is the result of the expression?";
+        Scanner number = new Scanner(System.in);
         Scanner user = new Scanner(System.in);
         System.out.print("May I have your name? ");
         String userName = user.next();
         System.out.println("Hello, " + userName + "!");
-        System.out.println("What is the result of the expression?");
+        System.out.println(rule);
 
-        Scanner number = new Scanner(System.in);
         int count = 0;
         for (var i = 0; i < 3; i++) {
             int randomNumber1 = Randomizer.getRandom();

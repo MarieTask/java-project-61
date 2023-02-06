@@ -5,13 +5,14 @@ import hexlet.code.Randomizer;
 import java.util.Scanner;
 public class Even {
     public static void isEven() {
+        var rule = "Answer 'yes' if the number is even, otherwise answer 'no'.";
         Scanner number = new Scanner(System.in);
         Scanner user = new Scanner(System.in);
 
         System.out.print("May I have your name? ");
         String userName = user.next();
         System.out.println("Hello, " + userName + "!");
-        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
+        System.out.println(rule);
         int count = 0;
         for (var i = 0; i < 3; i++) {
             int randomNumber = Randomizer.getRandom();
