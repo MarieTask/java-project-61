@@ -7,24 +7,27 @@ import hexlet.code.RandomOperation;
 import java.util.Scanner;
 
 public class Progression {
-    final MAX_LENGTH_OF_PROGRESSION = 10;
+    static final int MAX_LENGTH_OF_PROGRESSION = 10;
     public static String[] createMassive(int firstNumber, int differenceBetweenTwoNumbers, char randomOperation, int length) {
         String[] strMassive = new String[length];
         int[] intMassive = new int[length];
-        var firstNumber = Randomizer.getRandom();
-        strMassive[0] = firstNumber;
-        for (var i = 1; i < length; i++) {
+        intMassive[0] = firstNumber;
+        for (var i = 1; i < intMassive.length; i++) {
             if (randomOperation == '-') {
                 intMassive[i] = intMassive[i - 1] - differenceBetweenTwoNumbers;
             } else if (randomOperation == '+') {
                 intMassive[i] = intMassive[i - 1] + differenceBetweenTwoNumbers;
-            } else (randomOperation == '*') {
-                intMassive[i] = intMassive[i - 1] * differenceBetweenTwoNumbers;
             }
         }
-        for (var j = 0; j < length; j++) {
+        for (var j = 0; j < strMassive.length; j++) {
             strMassive[j] = String.valueOf(intMassive[j]);
         }
+        return strMassive;
+    }
+    public static String massiveWithHiddenSpot(String[] intMassive, int hiddenSpot) {
+        intMassive[hiddenSpot] = "..";
+        String stringWithHiddenSpot = String.join(" ", intMassive);
+        return stringWithHiddenSpot;
     }
     public static void fillTheBlank() {
         var rule = "What number is missing in the progression?";
@@ -35,5 +38,26 @@ public class Progression {
         String userName = user.next();
         System.out.println("Hello, " + userName + "!");
         System.out.println(rule);
+        int count = 0;
+        for (var i = 0; i < 3; i++) {
+            int firstNumber = Randomizer.getRandom();
+            int differenceBetweenTwoNumbers = Randomizer.getRandom();
+            var randomOperation = RandomOperation.getRandomOperation();
+            String[] intMassive = createMassive(firstNumber, differenceBetweenTwoNumbers, randomOperation, MAX_LENGTH_OF_PROGRESSION);
+            int hiddenSpotIndex = Randomizer.getRandom();
+            System.out.println("Question: " + massiveWithHiddenSpot(intMassive, hiddenSpotIndex));
+            System.out.print("Your answer: ");
+            String userAnswer = number.next();
+            if (userAnswer.equals(intMassive[hiddenSpotIndex])) {
+                System.out.println("Correct!");
+                count++;
+            } else {
+                System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '" + intMassive[hiddenSpotIndex] + "'. \nLet's try again, " + userName + "!");
+                break;
+            }
+        }
+        if (count == 3) {
+            System.out.println("Congratulations, " + userName + "!");
+        }
     }
 }
