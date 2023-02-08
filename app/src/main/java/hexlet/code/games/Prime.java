@@ -4,17 +4,19 @@ import hexlet.code.Randomizer;
 
 import java.util.Scanner;
 public class Prime {
-    public static void isTrue() {
+    public static String isTrue() {
         int number = Randomizer.getRandom();
+        String result = "";
         for (var divider = 2; divider < 17; divider++) {
             if (divider > Math.sqrt(number)) {
-                System.out.println("yes");
+                result = "yes";
             } else if ((divider <= Math.sqrt(number) && (number % divider == 0))) {
                 divider++;
             } else {
-                System.out.println("no");
+                result = "no";
             }
         }
+        return result;
     }
     public static void isPrime() {
         var rule = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
@@ -34,13 +36,13 @@ public class Prime {
             if ((userAnswer.equals("no") && (randomNumber == 0)) || ((userAnswer.equals("no")) && (randomNumber == 1))) {
                 System.out.println("Correct!");
                 count++;
-            } else if (((userAnswer.equals("yes") && isTrue())) || ((userAnswer.equals("no")) && isTrue())) {
+            } else if (((userAnswer.equals("yes") && isTrue().equals("yes"))) || ((userAnswer.equals("no")) && isTrue().equals("no"))) {
                 System.out.println("Correct!");
                 count++;
-            } else if ((userAnswer.equals("no")) && isTrue()) {
+            } else if ((userAnswer.equals("no")) && isTrue().equals("yes")) {
                 System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was 'yes'. \nLet's try again, " + userName + "!");
                 break;
-            } else if ((userAnswer.equals("yes")) && isTrue()) {
+            } else if ((userAnswer.equals("yes")) && isTrue().equals("no")) {
                 System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was 'no'. \nLet's try again, " + userName + "!");
                 break;
             } else {
