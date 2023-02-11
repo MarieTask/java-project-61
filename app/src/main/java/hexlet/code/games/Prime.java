@@ -4,17 +4,25 @@ import hexlet.code.Randomizer;
 
 import java.util.Scanner;
 public class Prime {
-    public static String isTrue() {
-        int number = Randomizer.getRandom();
+    public static String isTrue(int randomNumber) {
         String result = "";
-        for (var divider = 2; divider < 17; divider++) {
-            if (divider > Math.sqrt(number)) {
-                result = "yes";
-            } else if ((divider <= Math.sqrt(number) && (number % divider == 0))) {
-                divider++;
-            } else {
-                result = "no";
+        int count = 0;
+        if (randomNumber <= 1) {
+            result = "no";
+        }
+        if (randomNumber == 2) {
+            result = "yes";
+        }
+        for (int divider = 2; divider <= randomNumber / 2; divider++) {
+            var modulo = randomNumber % divider;
+            if (modulo == 0) {
+                count++;
             }
+        }
+        if (count <= 0) {
+            result = "yes";
+        } else {
+            result = "no";
         }
         return result;
     }
@@ -33,16 +41,13 @@ public class Prime {
             System.out.println("Question: " + randomNumber);
             System.out.print("Your answer: ");
             String userAnswer = number.next().toLowerCase();
-            if ((userAnswer.equals("no") && (randomNumber == 0)) || ((userAnswer.equals("no")) && (randomNumber == 1))) {
+            if (((userAnswer.equals("yes") && isTrue(randomNumber).equals("yes"))) || ((userAnswer.equals("no")) && isTrue(randomNumber).equals("no"))) {
                 System.out.println("Correct!");
                 count++;
-            } else if (((userAnswer.equals("yes") && isTrue().equals("yes"))) || ((userAnswer.equals("no")) && isTrue().equals("no"))) {
-                System.out.println("Correct!");
-                count++;
-            } else if ((userAnswer.equals("no")) && isTrue().equals("yes")) {
+            } else if ((userAnswer.equals("no")) && isTrue(randomNumber).equals("yes")) {
                 System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was 'yes'. \nLet's try again, " + userName + "!");
                 break;
-            } else if ((userAnswer.equals("yes")) && isTrue().equals("no")) {
+            } else if ((userAnswer.equals("yes")) && isTrue(randomNumber).equals("no")) {
                 System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was 'no'. \nLet's try again, " + userName + "!");
                 break;
             } else {
