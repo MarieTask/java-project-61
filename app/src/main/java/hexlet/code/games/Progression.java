@@ -45,14 +45,16 @@ public class Progression {
             var randomOperation = RandomOperation.getRandomOperation();
             String[] intMassive = createMassive(firstNumber, differenceBetweenTwoNumbers, randomOperation, MAX_LENGTH_OF_PROGRESSION);
             int hiddenSpotIndex = Randomizer.getRandom();
+            int beforeHiddenSpot = hiddenSpotIndex - 1;
+            String secretNumber = Integer.toString(Integer.valueOf(intMassive[beforeHiddenSpot]) + Integer.valueOf(differenceBetweenTwoNumbers) / 2);
             System.out.println("Question: " + massiveWithHiddenSpot(intMassive, hiddenSpotIndex));
             System.out.print("Your answer: ");
             String userAnswer = number.next();
-            if (userAnswer.equals(intMassive[hiddenSpotIndex])) {
+            if (userAnswer.equals(secretNumber)) {
                 System.out.println("Correct!");
                 count++;
             } else {
-                System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '" + intMassive[hiddenSpotIndex] + "'. \nLet's try again, " + userName + "!");
+                System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '" + secretNumber + "'. \nLet's try again, " + userName + "!");
                 break;
             }
         }
