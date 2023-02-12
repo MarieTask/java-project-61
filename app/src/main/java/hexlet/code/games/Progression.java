@@ -2,7 +2,7 @@ package hexlet.code.games;
 
 import hexlet.code.Randomizer;
 
-import hexlet.code.RandomOperation;
+import hexlet.code.RandomOperationForProgression;
 
 import java.util.Scanner;
 
@@ -42,19 +42,19 @@ public class Progression {
         for (var i = 0; i < 3; i++) {
             int firstNumber = Randomizer.getRandom();
             int differenceBetweenTwoNumbers = Randomizer.getRandom();
-            var randomOperation = RandomOperation.getRandomOperation();
+            var randomOperation = RandomOperationForProgression.getRandomOperationForProgression();
             String[] intMassive = createMassive(firstNumber, differenceBetweenTwoNumbers, randomOperation, MAX_LENGTH_OF_PROGRESSION);
-            int hiddenSpotIndex = Randomizer.getRandom();
-            int beforeHiddenSpot = hiddenSpotIndex - 1;
-            String secretNumber = Integer.toString(Integer.valueOf(intMassive[beforeHiddenSpot]) + Integer.valueOf(differenceBetweenTwoNumbers) / 2);
+            int hiddenSpotIndex = Randomizer.getRandom() - 2;
+            int secretNumber = (Integer.parseInt(intMassive[hiddenSpotIndex - 1]) + Integer.parseInt(intMassive[hiddenSpotIndex + 1]))/2;
+            String stringSecretNumber = Integer.toString(secretNumber);
             System.out.println("Question: " + massiveWithHiddenSpot(intMassive, hiddenSpotIndex));
             System.out.print("Your answer: ");
             String userAnswer = number.next();
-            if (userAnswer.equals(secretNumber)) {
+            if (userAnswer.equals(stringSecretNumber)) {
                 System.out.println("Correct!");
                 count++;
             } else {
-                System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '" + secretNumber + "'. \nLet's try again, " + userName + "!");
+                System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '" + stringSecretNumber + "'. \nLet's try again, " + userName + "!");
                 break;
             }
         }
