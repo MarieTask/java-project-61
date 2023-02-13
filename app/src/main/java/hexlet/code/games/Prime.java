@@ -8,7 +8,7 @@ public class Prime {
         String result = "";
         int count = 0;
         if (randomNumber <= 1) {
-            result = "no";
+            count++;
         }
         if (randomNumber == 2) {
             result = "yes";
