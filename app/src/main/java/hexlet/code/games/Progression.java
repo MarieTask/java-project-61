@@ -44,8 +44,8 @@ public class Progression {
             int differenceBetweenTwoNumbers = Randomizer.getRandom();
             var randomOperation = RandomOperationForProgression.getRandomOperationForProgression();
             String[] intMassive = createMassive(firstNumber, differenceBetweenTwoNumbers, randomOperation, MAX_LENGTH_OF_PROGRESSION);
-            int hiddenSpotIndex = Randomizer.getRandom() - 2;
-            int secretNumber = (Integer.parseInt(intMassive[hiddenSpotIndex - 1]) + Integer.parseInt(intMassive[hiddenSpotIndex + 1]))/2;
+            int hiddenSpotIndex = (Randomizer.getRandom()) - 1;
+            int secretNumber = (Integer.parseInt(intMassive[hiddenSpotIndex - 1]) + Integer.parseInt(intMassive[hiddenSpotIndex + 1])) / 2;
             String stringSecretNumber = Integer.toString(secretNumber);
             System.out.println("Question: " + massiveWithHiddenSpot(intMassive, hiddenSpotIndex));
             System.out.print("Your answer: ");
