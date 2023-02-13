@@ -50,9 +50,9 @@ public class Prime {
             } else if ((userAnswer.equals("yes")) && isTrue(randomNumber).equals("no")) {
                 System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was 'no'. \nLet's try again, " + userName + "!");
                 break;
-            } else {
+            /*} else {
                 System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was 'no'. \nLet's try again, " + userName + "!");
-                break;
+                break;*/
             }
         }
         if (count == 3) {
