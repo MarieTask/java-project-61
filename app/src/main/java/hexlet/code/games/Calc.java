@@ -33,7 +33,7 @@ public class Calc {
             int randomNumber2 = Randomizer.getRandom();
             var randomOperation = RandomOperation.getRandomOperation();
 
-            System.out.println("Question: " + randomNumber1 + "" + randomOperation + "" + randomNumber2);
+            System.out.println("Question: " + randomNumber1 + " " + randomOperation + " " + randomNumber2);
             System.out.print("Your answer: ");
             String userAnswer = number.next().toLowerCase();
             if (userAnswer.equals(Integer.toString(count(randomNumber1, randomNumber2, randomOperation)))) {
