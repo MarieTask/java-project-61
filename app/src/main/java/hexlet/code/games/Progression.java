@@ -7,6 +7,7 @@ import hexlet.code.RandomOperationForProgression;
 import java.util.Scanner;
 
 public class Progression {
+    static final int MIN_LENGTH_OF_PROGRESSION = 5;
     static final int MAX_LENGTH_OF_PROGRESSION = 10;
     public static String[] createMassive(int firstNumber, int differenceBetweenTwoNumbers, char randomOperation, int length) {
         String[] strMassive = new String[length];
@@ -43,9 +44,10 @@ public class Progression {
             int firstNumber = Randomizer.getRandom();
             int differenceBetweenTwoNumbers = Randomizer.getRandom();
             var randomOperation = RandomOperationForProgression.getRandomOperationForProgression();
-            String[] intMassive = createMassive(firstNumber, differenceBetweenTwoNumbers, randomOperation, MAX_LENGTH_OF_PROGRESSION);
-            int hiddenSpotIndex = (Randomizer.getRandom()) - 1;
-            int secretNumber = (Integer.parseInt(intMassive[hiddenSpotIndex - 1]) + Integer.parseInt(intMassive[hiddenSpotIndex + 1])) / 2;
+            int hiddenSpotIndex = Math.abs(Randomizer.getRandom(1, (MIN_LENGTH_OF_PROGRESSION - 1)));
+            int lengthOfProgression = Randomizer.getRandom(MIN_LENGTH_OF_PROGRESSION, MAX_LENGTH_OF_PROGRESSION);
+            String[] intMassive = createMassive(firstNumber, differenceBetweenTwoNumbers, randomOperation, lengthOfProgression);
+            int secretNumber = (Integer.parseInt(intMassive[hiddenSpotIndex + 1]) + Integer.parseInt(intMassive[hiddenSpotIndex - 1])) / 2;
             String stringSecretNumber = Integer.toString(secretNumber);
             System.out.println("Question: " + massiveWithHiddenSpot(intMassive, hiddenSpotIndex));
             System.out.print("Your answer: ");
