@@ -2,6 +2,7 @@ package hexlet.code.games;
 
 import hexlet.code.RandomOperation;
 import hexlet.code.Randomizer;
+/*import hexlet.code.Engine;*/
 
 import java.util.Scanner;
 public class Calc {
@@ -39,7 +40,7 @@ public class Calc {
             if (userAnswer.equals(Integer.toString(count(randomNumber1, randomNumber2, randomOperation)))) {
                 System.out.println("Correct!");
                 count++;
-            } else if (userAnswer != (Integer.toString(count(randomNumber1, randomNumber2, randomOperation)))) {
+            } else {
                 System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '" + count(randomNumber1, randomNumber2, randomOperation) + "'. \nLet's try again, " + userName + "!");
                 break;
             }

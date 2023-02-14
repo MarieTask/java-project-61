@@ -1,11 +1,9 @@
-/*
-package hexlet.code;
+/*package hexlet.code;
 
 import java.util.Scanner;
 
 public class Engine {
     public static void startGames() {
-        var final MAX_ROUND = 3;
         Scanner user = new Scanner(System.in);
         System.out.print("May I have your name? ");
         String userName = user.next();
@@ -31,4 +29,4 @@ public class Engine {
         }
     }
 }
- */
+*/
