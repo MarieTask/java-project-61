@@ -2,10 +2,11 @@ package hexlet.code.games;
 
 import hexlet.code.RandomOperation;
 import hexlet.code.Randomizer;
-/*import hexlet.code.Engine;*/
+// import hexlet.code.Engine;
 
 import java.util.Scanner;
 public class Calc {
+    private static final int MAX_ROUNDS = 3;
     public static int count(int randomNumber1, int randomNumber2, char randomOperation) {
 
         var result = 0;
@@ -18,7 +19,6 @@ public class Calc {
         }
         return result;
     }
-
     public static void calcGame() {
         var rule = "What is the result of the expression?";
         Scanner number = new Scanner(System.in);
@@ -29,7 +29,7 @@ public class Calc {
         System.out.println(rule);
 
         int count = 0;
-        for (var i = 0; i < 3; i++) {
+        for (var i = 0; i < MAX_ROUNDS; i++) {
             int randomNumber1 = Randomizer.getRandom();
             int randomNumber2 = Randomizer.getRandom();
             var randomOperation = RandomOperation.getRandomOperation();
@@ -41,7 +41,8 @@ public class Calc {
                 System.out.println("Correct!");
                 count++;
             } else {
-                System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '" + count(randomNumber1, randomNumber2, randomOperation) + "'. \nLet's try again, " + userName + "!");
+                System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '" + count(randomNumber1, randomNumber2, randomOperation) + "'.");
+                System.out.println("Let's try again, " + userName + "!");
                 break;
             }
         }

@@ -5,6 +5,7 @@ import hexlet.code.Randomizer;
 
 import java.util.Scanner;
 public class Prime {
+    private static final int MAX_ROUNDS = 3;
     public static String isTrue(int randomNumber) {
         String result = "";
         int count = 0;
@@ -36,8 +37,9 @@ public class Prime {
         String userName = user.next();
         System.out.println("Hello, " + userName + "!");
         System.out.println(rule);
+
         int count = 0;
-        for (var i = 0; i < 3; i++) {
+        for (var i = 0; i < MAX_ROUNDS; i++) {
             int randomNumber = Randomizer.getRandom();
             System.out.println("Question: " + randomNumber);
             System.out.print("Your answer: ");

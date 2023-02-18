@@ -7,6 +7,7 @@ import hexlet.code.RandomOperationForProgression;
 import java.util.Scanner;
 
 public class Progression {
+    private static final int MAX_ROUNDS = 3;
     static final int MIN_LENGTH_OF_PROGRESSION = 5;
     static final int MAX_LENGTH_OF_PROGRESSION = 10;
     public static String[] createMassive(int firstNumber, int differenceBetweenTwoNumbers, char randomOperation, int length) {
@@ -39,8 +40,9 @@ public class Progression {
         String userName = user.next();
         System.out.println("Hello, " + userName + "!");
         System.out.println(rule);
+
         int count = 0;
-        for (var i = 0; i < 3; i++) {
+        for (var i = 0; i < MAX_ROUNDS; i++) {
             int firstNumber = Randomizer.getRandom();
             int differenceBetweenTwoNumbers = Randomizer.getRandom();
             var randomOperation = RandomOperationForProgression.getRandomOperationForProgression();
@@ -56,7 +58,8 @@ public class Progression {
                 System.out.println("Correct!");
                 count++;
             } else {
-                System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '" + stringSecretNumber + "'. \nLet's try again, " + userName + "!");
+                System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '" + stringSecretNumber + "'.");
+                System.out.println("Let's try again, " + userName + "!");
                 break;
             }
         }

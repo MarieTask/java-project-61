@@ -3,6 +3,7 @@
 import java.util.Scanner;
 
 public class Engine {
+    private static final int MAX_ROUNDS = 3;
     public static void startGames() {
         Scanner user = new Scanner(System.in);
         System.out.print("May I have your name? ");

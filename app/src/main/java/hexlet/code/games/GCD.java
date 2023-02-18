@@ -5,25 +5,26 @@ import hexlet.code.Randomizer;
 
 import java.util.Scanner;
 public class GCD {
-    public static int findROD(int randomNumber1, int randomNumber2) {
+    private static final int MAX_ROUNDS = 3;
+    public static int findRod(int randomNumber1, int randomNumber2) {
         if (randomNumber1 < randomNumber2) {
             var min = randomNumber1;
             var max = randomNumber2;
-            var ROD = max % min;
-            while (ROD != 0) {
+            var rod = max % min;
+            while (rod != 0) {
                 max = min;
-                min = ROD;
-                ROD = max % min;
+                min = rod;
+                rod = max % min;
             }
             return min;
         } else {
             var min = randomNumber2;
             var max = randomNumber1;
-            var ROD = max % min;
-            while (ROD != 0) {
+            var rod = max % min;
+            while (rod != 0) {
                 max = min;
-                min = ROD;
-                ROD = max % min;
+                min = rod;
+                rod = max % min;
             }
             return min;
         }
@@ -37,18 +38,20 @@ public class GCD {
         String userName = user.next();
         System.out.println("Hello, " + userName + "!");
         System.out.println(rule);
+
         int count = 0;
-        for (var i = 0; i < 3; i++) {
+        for (var i = 0; i < MAX_ROUNDS; i++) {
             int randomNumber1 = Randomizer.getRandom();
             int randomNumber2 = Randomizer.getRandom();
             System.out.println("Question: " + randomNumber1 + " " + randomNumber2);
             System.out.print("Your answer: ");
             String userAnswer = number.next().toLowerCase();
-            if (userAnswer.equals(Integer.toString(findROD(randomNumber1, randomNumber2)))) {
+            if (userAnswer.equals(Integer.toString(findRod(randomNumber1, randomNumber2)))) {
                 System.out.println("Correct!");
                 count++;
             } else {
-                System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '" + findROD(randomNumber1, randomNumber2) + "'. \nLet's try again, " + userName + "!");
+                System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '" + findRod(randomNumber1, randomNumber2) + "'.");
+                System.out.println("Let's try again, " + userName + "!");
                 break;
             }
         }
