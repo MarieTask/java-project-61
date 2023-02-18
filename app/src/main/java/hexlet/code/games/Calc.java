@@ -41,12 +41,13 @@ public class Calc {
                 System.out.println("Correct!");
                 count++;
             } else {
-                System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '" + count(randomNumber1, randomNumber2, randomOperation) + "'.");
-                System.out.println("Let's try again, " + userName + "!");
+                System.out.print("'" + userAnswer + "' is wrong answer ;(.");
+                System.out.println("Correct answer was '" + count(randomNumber1, randomNumber2, randomOperation) + "'.");
+                System.out.print("Let's try again, " + userName + "!");
                 break;
             }
         }
-        if (count == 3) {
+        if (count == MAX_ROUNDS) {
             System.out.println("Congratulations, " + userName + "!");
         }
     }

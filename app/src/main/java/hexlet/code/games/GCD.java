@@ -50,12 +50,13 @@ public class GCD {
                 System.out.println("Correct!");
                 count++;
             } else {
-                System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '" + findRod(randomNumber1, randomNumber2) + "'.");
+                System.out.println("'" + userAnswer + "' is wrong answer ;(.");
+                System.out.print("Correct answer was '" + findRod(randomNumber1, randomNumber2) + "'.");
                 System.out.println("Let's try again, " + userName + "!");
                 break;
             }
         }
-        if (count == 3) {
+        if (count == MAX_ROUNDS) {
             System.out.println("Congratulations, " + userName + "!");
         }
     }

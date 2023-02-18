@@ -44,21 +44,23 @@ public class Prime {
             System.out.println("Question: " + randomNumber);
             System.out.print("Your answer: ");
             String userAnswer = number.next().toLowerCase();
-            if (((userAnswer.equals("yes") && isTrue(randomNumber).equals("yes"))) || ((userAnswer.equals("no")) && isTrue(randomNumber).equals("no"))) {
+            if (userAnswer.equals("yes") && isTrue(randomNumber).equals("yes")) {
+                System.out.println("Correct!");
+                count++;
+            } else if (userAnswer.equals("no") && isTrue(randomNumber).equals("no")) {
                 System.out.println("Correct!");
                 count++;
             } else if ((userAnswer.equals("no")) && isTrue(randomNumber).equals("yes")) {
-                System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was 'yes'. \nLet's try again, " + userName + "!");
+                System.out.println("'" + userAnswer + "' is wrong answer ;(.");
+                System.out.print("Correct answer was 'yes'. \nLet's try again, " + userName + "!");
                 break;
             } else if ((userAnswer.equals("yes")) && isTrue(randomNumber).equals("no")) {
-                System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was 'no'. \nLet's try again, " + userName + "!");
+                System.out.println("'" + userAnswer + "' is wrong answer ;(.");
+                System.out.print("Correct answer was 'no'. \nLet's try again, " + userName + "!");
                 break;
-            /*} else {
-                System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was 'no'. \nLet's try again, " + userName + "!");
-                break;*/
             }
         }
-        if (count == 3) {
+        if (count == MAX_ROUNDS) {
             System.out.println("Congratulations, " + userName + "!");
         }
     }

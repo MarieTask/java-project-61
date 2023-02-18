@@ -58,12 +58,13 @@ public class Progression {
                 System.out.println("Correct!");
                 count++;
             } else {
-                System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '" + stringSecretNumber + "'.");
+                System.out.println("'" + userAnswer + "' is wrong answer ;(.");
+                System.out.print("Correct answer was '" + stringSecretNumber + "'.");
                 System.out.println("Let's try again, " + userName + "!");
                 break;
             }
         }
-        if (count == 3) {
+        if (count == MAX_ROUNDS) {
             System.out.println("Congratulations, " + userName + "!");
         }
     }

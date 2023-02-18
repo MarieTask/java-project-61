@@ -22,7 +22,7 @@ public class Even {
             System.out.println("Question: " + randomNumber);
             System.out.print("Your answer: ");
             String userAnswer = number.next().toLowerCase();
-            if (userAnswer.equals("yes") && (randomNumber % 2 == 0) || userAnswer.equals("no") && randomNumber % 2 != 0) {
+            if (userAnswer.equals("yes") && randomNumber % 2 == 0 || userAnswer.equals("no") && randomNumber % 2 != 0) {
                 System.out.println("Correct!");
                 count++;
             } else if ((userAnswer.equals("no")) && (randomNumber % 2 == 0)) {
@@ -39,7 +39,7 @@ public class Even {
                 break;
             }
         }
-        if (count == 3) {
+        if (count == MAX_ROUNDS) {
             System.out.println("Congratulations, " + userName + "!");
         }
     }
