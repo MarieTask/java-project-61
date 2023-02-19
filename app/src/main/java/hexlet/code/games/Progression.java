@@ -4,8 +4,6 @@ import hexlet.code.Randomizer;
 import hexlet.code.RandomOperationForProgression;
 import hexlet.code.Engine;
 
-import java.util.Scanner;
-
 public class Progression {
     static final int MIN_LENGTH_OF_PROGRESSION = 5;
     static final int MAX_LENGTH_OF_PROGRESSION = 10;

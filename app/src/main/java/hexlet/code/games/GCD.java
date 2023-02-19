@@ -2,7 +2,6 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 import hexlet.code.Randomizer;
-import hexlet.code.Engine;
 
 public class GCD {
     public static String findRod(int randomNumber1, int randomNumber2) {
