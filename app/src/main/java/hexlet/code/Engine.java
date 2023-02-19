@@ -1,33 +1,25 @@
-/*package hexlet.code;
+package hexlet.code;
 
 import java.util.Scanner;
 
 public class Engine {
-    private static final int MAX_ROUNDS = 3;
-    public static void startGames() {
+    private static final int MAX_ROUND = 3;
+
+    public static int getCountOfRounds() {
+        return MAX_ROUND;
+    }
+}
+    /*private static final int ANSWER_PLUS_QUESTION = 2;
+    public static int getValueOfArray() {
+        return ANSWER_PLUS_QUESTION;
+    }
+    public static void startGame(String rule) {
         Scanner user = new Scanner(System.in);
         System.out.print("May I have your name? ");
         String userName = user.next();
         System.out.println("Hello, " + userName + "!");
-        System.out.println(rule);
 
-        Scanner number = new Scanner(System.in);
-        int count = 0;
-        for (var i = 0; i < MAX_ROUND; i++) {
-            System.out.println("Question: " + );
-            System.out.print("Your answer: ");
-            String userAnswer = number.next().toLowerCase();
-            if () {
-                System.out.println("Correct!");
-                count++;
-            } else if () {
-                System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '" + "'. \nLet's try again, " + userName + "!");
-                break;
-            }
-        }
-        if (count == 3) {
-            System.out.println("Congratulations, " + userName + "!");
-        }
+        System.out.println(rule);
     }
 }
 */

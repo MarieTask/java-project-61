@@ -2,12 +2,11 @@ package hexlet.code.games;
 
 import hexlet.code.Randomizer;
 import hexlet.code.RandomOperationForProgression;
-/*import hexlet.code.Engine;*/
+import hexlet.code.Engine;
 
 import java.util.Scanner;
 
 public class Progression {
-    private static final int MAX_ROUNDS = 3;
     static final int MIN_LENGTH_OF_PROGRESSION = 5;
     static final int MAX_LENGTH_OF_PROGRESSION = 10;
     public static String[] createMassive(int firstNumber, int diffBetweenTwoNum, char randomOperation, int length) {
@@ -32,7 +31,8 @@ public class Progression {
         return stringWithHiddenSpot;
     }
     public static void fillTheBlank() {
-        var rule = "What number is missing in the progression?";
+        String rule = "What number is missing in the progression?";
+        int countOfRounds = Engine.getCountOfRounds();
         Scanner number = new Scanner(System.in);
         Scanner user = new Scanner(System.in);
 
@@ -42,7 +42,7 @@ public class Progression {
         System.out.println(rule);
 
         int count = 0;
-        for (var i = 0; i < MAX_ROUNDS; i++) {
+        for (var i = 0; i < countOfRounds; i++) {
             int firstNumber = Randomizer.getRandom();
             int diffBetweenTwoNum = Randomizer.getRandom();
             var randomOperation = RandomOperationForProgression.getRandomOperationForProgression();
@@ -64,7 +64,7 @@ public class Progression {
                 break;
             }
         }
-        if (count == MAX_ROUNDS) {
+        if (count == countOfRounds) {
             System.out.println("Congratulations, " + userName + "!");
         }
     }

@@ -1,11 +1,10 @@
 package hexlet.code.games;
 
 import hexlet.code.Randomizer;
-/*import hexlet.code.Engine;*/
+import hexlet.code.Engine;
 
 import java.util.Scanner;
 public class Prime {
-    private static final int MAX_ROUNDS = 3;
     public static String isTrue(int randomNumber) {
         String result = "";
         int count = 0;
@@ -29,7 +28,8 @@ public class Prime {
         return result;
     }
     public static void isPrime() {
-        var rule = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+        String rule = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+        int countOfRounds = Engine.getCountOfRounds();
         Scanner number = new Scanner(System.in);
         Scanner user = new Scanner(System.in);
 
@@ -39,7 +39,7 @@ public class Prime {
         System.out.println(rule);
 
         int count = 0;
-        for (var i = 0; i < MAX_ROUNDS; i++) {
+        for (var i = 0; i < countOfRounds; i++) {
             int randomNumber = Randomizer.getRandom();
             System.out.println("Question: " + randomNumber);
             System.out.print("Your answer: ");
@@ -60,7 +60,7 @@ public class Prime {
                 break;
             }
         }
-        if (count == MAX_ROUNDS) {
+        if (count == countOfRounds) {
             System.out.println("Congratulations, " + userName + "!");
         }
     }
