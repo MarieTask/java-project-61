@@ -31,7 +31,7 @@ public class App {
         }
         if (number.equals("2")) {
             greet();
-            Even.isEven();
+            Even.runEven();
         }
         if (number.equals("3")) {
             greet();

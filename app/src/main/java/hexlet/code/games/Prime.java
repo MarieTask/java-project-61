@@ -30,38 +30,16 @@ public class Prime {
     public static void isPrime() {
         String rule = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
         int countOfRounds = Engine.getCountOfRounds();
-        Scanner number = new Scanner(System.in);
-        Scanner user = new Scanner(System.in);
+        String[][] info = new String[Engine.getCountOfRounds()][Engine.getValueOfArray()];
 
-        System.out.print("May I have your name? ");
-        String userName = user.next();
-        System.out.println("Hello, " + userName + "!");
         System.out.println(rule);
 
-        int count = 0;
         for (var i = 0; i < countOfRounds; i++) {
             int randomNumber = Randomizer.getRandom();
-            System.out.println("Question: " + randomNumber);
-            System.out.print("Your answer: ");
-            String userAnswer = number.next().toLowerCase();
-            if (userAnswer.equals("yes") && isTrue(randomNumber).equals("yes")) {
-                System.out.println("Correct!");
-                count++;
-            } else if (userAnswer.equals("no") && isTrue(randomNumber).equals("no")) {
-                System.out.println("Correct!");
-                count++;
-            } else if ((userAnswer.equals("no")) && isTrue(randomNumber).equals("yes")) {
-                System.out.println("'" + userAnswer + "' is wrong answer ;(.");
-                System.out.print("Correct answer was 'yes'. \nLet's try again, " + userName + "!");
-                break;
-            } else if ((userAnswer.equals("yes")) && isTrue(randomNumber).equals("no")) {
-                System.out.println("'" + userAnswer + "' is wrong answer ;(.");
-                System.out.print("Correct answer was 'no'. \nLet's try again, " + userName + "!");
-                break;
-            }
+            String answer = Integer.toString(randomNumber);
+            info[i][0] = answer;
+            info[i][1] = isTrue(randomNumber);
         }
-        if (count == countOfRounds) {
-            System.out.println("Congratulations, " + userName + "!");
-        }
+        Engine.startGame(rule, info);
     }
 }

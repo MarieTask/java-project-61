@@ -33,15 +33,10 @@ public class Progression {
     public static void fillTheBlank() {
         String rule = "What number is missing in the progression?";
         int countOfRounds = Engine.getCountOfRounds();
-        Scanner number = new Scanner(System.in);
-        Scanner user = new Scanner(System.in);
+        String[][] info = new String[Engine.getCountOfRounds()][Engine.getValueOfArray()];
 
-        System.out.print("May I have your name? ");
-        String userName = user.next();
-        System.out.println("Hello, " + userName + "!");
         System.out.println(rule);
 
-        int count = 0;
         for (var i = 0; i < countOfRounds; i++) {
             int firstNumber = Randomizer.getRandom();
             int diffBetweenTwoNum = Randomizer.getRandom();
@@ -51,21 +46,10 @@ public class Progression {
             String[] intMas = createMassive(firstNumber, diffBetweenTwoNum, randomOperation, lengthOfProgression);
             int secretNumber = (Integer.parseInt(intMas[hidIndex + 1]) + Integer.parseInt(intMas[hidIndex - 1])) / 2;
             String stringSecretNumber = Integer.toString(secretNumber);
-            System.out.println("Question: " + massiveWithHiddenSpot(intMas, hidIndex));
-            System.out.print("Your answer: ");
-            String userAnswer = number.next();
-            if (userAnswer.equals(stringSecretNumber)) {
-                System.out.println("Correct!");
-                count++;
-            } else {
-                System.out.println("'" + userAnswer + "' is wrong answer ;(.");
-                System.out.print("Correct answer was '" + stringSecretNumber + "'.");
-                System.out.println("Let's try again, " + userName + "!");
-                break;
-            }
+
+            info[i][0] = massiveWithHiddenSpot(intMas, hidIndex);
+            info[i][1] = stringSecretNumber;
         }
-        if (count == countOfRounds) {
-            System.out.println("Congratulations, " + userName + "!");
-        }
+        Engine.startGame(rule, info);
     }
 }
