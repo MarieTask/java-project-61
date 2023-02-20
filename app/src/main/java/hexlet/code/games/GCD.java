@@ -3,6 +3,9 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 import hexlet.code.Randomizer;
 
+import static hexlet.code.Engine.MAX_ROUND;
+import static hexlet.code.Engine.ANSWER_PLUS_QUESTION;
+
 public class GCD {
     public static String findRod(int randomNumber1, int randomNumber2) {
         if (randomNumber1 < randomNumber2) {
@@ -29,10 +32,9 @@ public class GCD {
     }
     public static void isGCD() {
         String rule = "Find the greatest common divisor of given numbers.";
-        int countOfRounds = Engine.getCountOfRounds();
-        String[][] info = new String[Engine.getCountOfRounds()][Engine.getValueOfArray()];
+        String[][] info = new String[MAX_ROUND][ANSWER_PLUS_QUESTION];
 
-        for (var i = 0; i < countOfRounds; i++) {
+        for (var i = 0; i < MAX_ROUND; i++) {
             int randomNumber1 = Randomizer.getRandom();
             int randomNumber2 = Randomizer.getRandom();
 

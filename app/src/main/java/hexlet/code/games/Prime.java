@@ -3,6 +3,9 @@ package hexlet.code.games;
 import hexlet.code.Randomizer;
 import hexlet.code.Engine;
 
+import static hexlet.code.Engine.MAX_ROUND;
+import static hexlet.code.Engine.ANSWER_PLUS_QUESTION;
+
 public class Prime {
     public static String isTrue(int randomNumber) {
         String result = "";
@@ -28,10 +31,9 @@ public class Prime {
     }
     public static void isPrime() {
         String rule = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-        int countOfRounds = Engine.getCountOfRounds();
-        String[][] info = new String[Engine.getCountOfRounds()][Engine.getValueOfArray()];
+        String[][] info = new String[MAX_ROUND][ANSWER_PLUS_QUESTION];
 
-        for (var i = 0; i < countOfRounds; i++) {
+        for (var i = 0; i < MAX_ROUND; i++) {
             int randomNumber = Randomizer.getRandom();
             String answer = Integer.toString(randomNumber);
             info[i][0] = answer;

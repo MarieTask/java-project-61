@@ -4,6 +4,9 @@ import hexlet.code.RandomOperation;
 import hexlet.code.Randomizer;
 import hexlet.code.Engine;
 
+import static hexlet.code.Engine.MAX_ROUND;
+import static hexlet.code.Engine.ANSWER_PLUS_QUESTION;
+
 public class Calc {
     public static String count(int randomNum1, int randomNum2, char randomOperation) {
 
@@ -19,10 +22,8 @@ public class Calc {
     }
     public static void calcGame() {
         String rule = "What is the result of the expression?";
-        int countOfRounds = Engine.getCountOfRounds();
-        String[][] info = new String[Engine.getCountOfRounds()][Engine.getValueOfArray()];
-
-        for (var i = 0; i < countOfRounds; i++) {
+        String[][] info = new String[MAX_ROUND][ANSWER_PLUS_QUESTION];
+        for (var i = 0; i < MAX_ROUND; i++) {
             int randomNum1 = Randomizer.getRandom();
             int randomNum2 = Randomizer.getRandom();
             var randomOperation = RandomOperation.getRandomOperation();

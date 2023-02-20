@@ -3,15 +3,8 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Engine {
-    private static final int MAX_ROUND = 3;
-
-    public static int getCountOfRounds() {
-        return MAX_ROUND;
-    }
-    private static final int ANSWER_PLUS_QUESTION = 2;
-    public static int getValueOfArray() {
-        return ANSWER_PLUS_QUESTION;
-    }
+    public static final int MAX_ROUND = 3;
+    public static final int ANSWER_PLUS_QUESTION = 2;
     public static void startGame(String rule, String[][] info) {
         System.out.println("Welcome to the Brain Games!");
         Scanner user = new Scanner(System.in);

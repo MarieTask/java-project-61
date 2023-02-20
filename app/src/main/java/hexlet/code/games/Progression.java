@@ -4,6 +4,9 @@ import hexlet.code.Randomizer;
 import hexlet.code.RandomOperationForProgression;
 import hexlet.code.Engine;
 
+import static hexlet.code.Engine.MAX_ROUND;
+import static hexlet.code.Engine.ANSWER_PLUS_QUESTION;
+
 public class Progression {
     static final int MIN_LENGTH_OF_PROGRESSION = 5;
     static final int MAX_LENGTH_OF_PROGRESSION = 10;
@@ -30,10 +33,9 @@ public class Progression {
     }
     public static void fillTheBlank() {
         String rule = "What number is missing in the progression?";
-        int countOfRounds = Engine.getCountOfRounds();
-        String[][] info = new String[Engine.getCountOfRounds()][Engine.getValueOfArray()];
+        String[][] info = new String[MAX_ROUND][ANSWER_PLUS_QUESTION];
 
-        for (var i = 0; i < countOfRounds; i++) {
+        for (var i = 0; i < MAX_ROUND; i++) {
             int firstNumber = Randomizer.getRandom();
             int diffBetweenTwoNum = Randomizer.getRandom();
             var randomOperation = RandomOperationForProgression.getRandomOperationForProgression();
