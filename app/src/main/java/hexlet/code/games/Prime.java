@@ -31,8 +31,6 @@ public class Prime {
         int countOfRounds = Engine.getCountOfRounds();
         String[][] info = new String[Engine.getCountOfRounds()][Engine.getValueOfArray()];
 
-        System.out.println(rule);
-
         for (var i = 0; i < countOfRounds; i++) {
             int randomNumber = Randomizer.getRandom();
             String answer = Integer.toString(randomNumber);

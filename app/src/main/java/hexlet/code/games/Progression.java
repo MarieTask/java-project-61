@@ -33,8 +33,6 @@ public class Progression {
         int countOfRounds = Engine.getCountOfRounds();
         String[][] info = new String[Engine.getCountOfRounds()][Engine.getValueOfArray()];
 
-        System.out.println(rule);
-
         for (var i = 0; i < countOfRounds; i++) {
             int firstNumber = Randomizer.getRandom();
             int diffBetweenTwoNum = Randomizer.getRandom();

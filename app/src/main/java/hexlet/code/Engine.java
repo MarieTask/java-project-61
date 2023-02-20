@@ -13,6 +13,7 @@ public class Engine {
         return ANSWER_PLUS_QUESTION;
     }
     public static void startGame(String rule, String[][] info) {
+        System.out.println("Welcome to the Brain Games!");
         Scanner user = new Scanner(System.in);
         System.out.print("May I have your name? ");
         String userName = user.next();

@@ -22,8 +22,6 @@ public class Calc {
         int countOfRounds = Engine.getCountOfRounds();
         String[][] info = new String[Engine.getCountOfRounds()][Engine.getValueOfArray()];
 
-        System.out.println(rule);
-
         for (var i = 0; i < countOfRounds; i++) {
             int randomNum1 = Randomizer.getRandom();
             int randomNum2 = Randomizer.getRandom();

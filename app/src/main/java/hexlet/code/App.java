@@ -9,10 +9,6 @@ import hexlet.code.games.Prime;
 import java.util.Scanner;
 
 public class App {
-    public static void greet() {
-        var welcome = "Welcome to the Brain Games!";
-        System.out.println(welcome);
-    }
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -30,23 +26,18 @@ public class App {
             Cli.greeting();
         }
         if (number.equals("2")) {
-            greet();
             Even.runEven();
         }
         if (number.equals("3")) {
-            greet();
             Calc.calcGame();
         }
         if (number.equals("4")) {
-            greet();
             GCD.isGCD();
         }
         if (number.equals("5")) {
-            greet();
             Progression.fillTheBlank();
         }
         if (number.equals("6")) {
-            greet();
             Prime.isPrime();
         }
         scanner.close();

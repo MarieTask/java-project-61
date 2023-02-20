@@ -32,8 +32,6 @@ public class GCD {
         int countOfRounds = Engine.getCountOfRounds();
         String[][] info = new String[Engine.getCountOfRounds()][Engine.getValueOfArray()];
 
-        System.out.println(rule);
-
         for (var i = 0; i < countOfRounds; i++) {
             int randomNumber1 = Randomizer.getRandom();
             int randomNumber2 = Randomizer.getRandom();
