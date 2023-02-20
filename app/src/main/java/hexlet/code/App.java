@@ -38,7 +38,7 @@ public class App {
             Progression.fillTheBlank();
         }
         if (number.equals("6")) {
-            Prime.isPrime();
+            Prime.startPrimeGame();
         }
         scanner.close();
     }

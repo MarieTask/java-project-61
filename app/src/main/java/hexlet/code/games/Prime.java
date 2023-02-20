@@ -7,7 +7,7 @@ import static hexlet.code.Engine.MAX_ROUND;
 import static hexlet.code.Engine.ANSWER_PLUS_QUESTION;
 
 public class Prime {
-    public static String isTrue(int randomNumber) {
+    public static String isPrime(int randomNumber) {
         String result = "";
         int count = 0;
         if (randomNumber <= 1) {
@@ -29,7 +29,7 @@ public class Prime {
         }
         return result;
     }
-    public static void isPrime() {
+    public static void startPrimeGame() {
         String rule = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
         String[][] info = new String[MAX_ROUND][ANSWER_PLUS_QUESTION];
 
@@ -37,7 +37,7 @@ public class Prime {
             int randomNumber = Randomizer.getRandom();
             String answer = Integer.toString(randomNumber);
             info[i][0] = answer;
-            info[i][1] = isTrue(randomNumber);
+            info[i][1] = isPrime(randomNumber);
         }
         Engine.startGame(rule, info);
     }
