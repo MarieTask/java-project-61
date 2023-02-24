@@ -11,12 +11,10 @@ public class Calc {
     public static String count(int randomNum1, int randomNum2, char randomOperation) {
 
         var result = 0;
-        if (randomOperation == '+') {
-            result = randomNum1 + randomNum2;
-        } else if (randomOperation == '-') {
-            result = randomNum1 - randomNum2;
-        } else if (randomOperation == '*') {
-            result = randomNum1 * randomNum2;
+        switch (randomOperation) {
+            case '+' -> result = randomNum1 + randomNum2;
+            case '-' -> result = randomNum1 - randomNum2;
+            case '*' -> result = randomNum1 * randomNum2;
         }
         return Integer.toString(result);
     }
