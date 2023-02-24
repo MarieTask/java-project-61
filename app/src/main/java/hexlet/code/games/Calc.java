@@ -12,9 +12,17 @@ public class Calc {
 
         var result = 0;
         switch (randomOperation) {
-            case '+' -> result = randomNum1 + randomNum2;
-            case '-' -> result = randomNum1 - randomNum2;
-            case '*' -> result = randomNum1 * randomNum2;
+            case '+':
+                result = randomNum1 + randomNum2;
+                break;
+            case '-':
+                result = randomNum1 - randomNum2;
+                break;
+            case '*':
+                result = randomNum1 * randomNum2;
+                break;
+            default:
+                break;
         }
         return Integer.toString(result);
     }
