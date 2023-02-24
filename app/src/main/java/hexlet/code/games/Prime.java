@@ -7,27 +7,17 @@ import static hexlet.code.Engine.MAX_ROUND;
 import static hexlet.code.Engine.ANSWER_PLUS_QUESTION;
 
 public class Prime {
-    public static String isPrime(int randomNumber) {
-        String result = "";
-        int count = 0;
+    public static boolean isPrime(int randomNumber) {
         if (randomNumber <= 1) {
-            count++;
+            return false;
         }
-        if (randomNumber == 2) {
-            result = "yes";
-        }
-        for (int divider = 2; divider <= randomNumber / 2; divider++) {
+        for (int divider = 2; divider < randomNumber; divider++) {
             var modulo = randomNumber % divider;
             if (modulo == 0) {
-                count++;
+                return false;
             }
         }
-        if (count <= 0) {
-            result = "yes";
-        } else {
-            result = "no";
-        }
-        return result;
+        return true;
     }
     public static void startPrimeGame() {
         String rule = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
@@ -35,9 +25,8 @@ public class Prime {
 
         for (var i = 0; i < MAX_ROUND; i++) {
             int randomNumber = Randomizer.getRandom();
-            String answer = Integer.toString(randomNumber);
-            info[i][0] = answer;
-            info[i][1] = isPrime(randomNumber);
+            info[i][0] = "" + randomNumber;
+            info[i][1] = isPrime(randomNumber) ? "yes" : "no";
         }
         Engine.startGame(rule, info);
     }
