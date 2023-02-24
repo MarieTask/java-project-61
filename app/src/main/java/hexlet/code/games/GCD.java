@@ -7,21 +7,15 @@ import static hexlet.code.Engine.MAX_ROUND;
 import static hexlet.code.Engine.ANSWER_PLUS_QUESTION;
 
 public class GCD {
-    public static String findRod(int randomNumber1, int randomNumber2) {
-        if (randomNumber1 < randomNumber2) {
-            findRod(randomNumber2, randomNumber1);
-            return Integer.toString(randomNumber1);
-        } else {
-            var min = randomNumber2;
-            var max = randomNumber1;
-            var rod = max % min;
-            while (rod != 0) {
-                max = min;
-                min = rod;
-                rod = max % min;
+    public static int findRod(int randomNumber1, int randomNumber2) {
+        while (randomNumber1 != randomNumber2) {
+            if (randomNumber1 > randomNumber2) {
+                randomNumber1 = randomNumber1 - randomNumber2;
+            } else {
+                randomNumber2 = randomNumber2 - randomNumber1;
             }
-            return Integer.toString(min);
         }
+        return randomNumber1;
     }
     public static void isGCD() {
         String rule = "Find the greatest common divisor of given numbers.";
@@ -32,7 +26,7 @@ public class GCD {
             int randomNumber2 = Randomizer.getRandom();
 
             info[i][0] = randomNumber1 + " " + randomNumber2;
-            info[i][1] = findRod(randomNumber1, randomNumber2);
+            info[i][1] = Integer.toString(findRod(randomNumber1, randomNumber2));
         }
         Engine.startGame(rule, info);
     }
