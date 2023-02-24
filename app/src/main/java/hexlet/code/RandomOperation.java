@@ -1,12 +1,9 @@
 package hexlet.code;
 
-import java.util.Random;
 public class RandomOperation {
+    public static final char[] SYMBOLS = {'+', '-', '*'};
     public static char getRandomOperation() {
-        String symbols = "+-*";
-
-        Random operations = new Random();
-        char operation = symbols.charAt(operations.nextInt(symbols.length()));
+        char operation = SYMBOLS[Randomizer.getRandom(0,2)];
         return operation;
     }
 }
