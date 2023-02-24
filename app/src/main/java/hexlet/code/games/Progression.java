@@ -39,9 +39,9 @@ public class Progression {
             int step = Randomizer.getRandom();
             var randomOperation = RandomOperation.getRandomOperationForProgression();
             int lengthOfProgression = Randomizer.getRandom(MIN_LENGTH_OF_PROGRESSION, MAX_LENGTH_OF_PROGRESSION);
-            int hidIndex = lengthOfProgression - 2;
+            int hidIndex = lengthOfProgression;
             String[] intArr = generateProgression(firstNum, step, randomOperation, lengthOfProgression);
-            int secretNumber = (Integer.parseInt(intArr[hidIndex + 1]) + Integer.parseInt(intArr[hidIndex - 1])) / 2;
+            int secretNumber = (Integer.parseInt(intArr[hidIndex]));
             String stringSecretNumber = Integer.toString(secretNumber);
 
             info[i][0] = massiveWithHiddenSpot(intArr, hidIndex);
