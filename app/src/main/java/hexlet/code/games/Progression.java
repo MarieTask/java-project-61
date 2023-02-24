@@ -10,26 +10,25 @@ import static hexlet.code.Engine.ANSWER_PLUS_QUESTION;
 public class Progression {
     static final int MIN_LENGTH_OF_PROGRESSION = 5;
     static final int MAX_LENGTH_OF_PROGRESSION = 10;
-    public static String[] generateProgression(int firstNum, int diffBetweenTwoNum, char randomOperation, int length) {
-        String[] strMassive = new String[length];
-        int[] intMas = new int[length];
-        intMas[0] = firstNum;
-        for (var i = 1; i < intMas.length; i++) {
+    public static String[] generateProgression(int firstNum, int step, char randomOperation, int length) {
+        String[] strArray = new String[length];
+        int[] intArray = new int[length];
+        intArray[0] = firstNum;
+        for (var i = 1; i < intArray.length; i++) {
             if (randomOperation == '-') {
-                intMas[i] = intMas[i - 1] - diffBetweenTwoNum;
+                intArray[i] = intArray[i - 1] - step;
             } else if (randomOperation == '+') {
-                intMas[i] = intMas[i - 1] + diffBetweenTwoNum;
+                intArray[i] = intArray[i - 1] + step;
             }
         }
-        for (var j = 0; j < strMassive.length; j++) {
-            strMassive[j] = String.valueOf(intMas[j]);
+        for (var j = 0; j < strArray.length; j++) {
+            strArray[j] = String.valueOf(intArray[j]);
         }
-        return strMassive;
+        return strArray;
     }
-    public static String massiveWithHiddenSpot(String[] intMas, int hiddenSpot) {
-        intMas[hiddenSpot] = "..";
-        String stringWithHiddenSpot = String.join(" ", intMas);
-        return stringWithHiddenSpot;
+    public static String massiveWithHiddenSpot(String[] intArray, int hiddenSpot) {
+        intArray[hiddenSpot] = "..";
+        return String.join(" ", intArray);
     }
     public static void fillTheBlank() {
         String rule = "What number is missing in the progression?";
@@ -37,15 +36,15 @@ public class Progression {
 
         for (var i = 0; i < MAX_ROUND; i++) {
             int firstNum = Randomizer.getRandom();
-            int diffBetweenTwoNum = Randomizer.getRandom();
+            int step = Randomizer.getRandom();
             var randomOperation = RandomOperation.getRandomOperationForProgression();
             int lengthOfProgression = Randomizer.getRandom(MIN_LENGTH_OF_PROGRESSION, MAX_LENGTH_OF_PROGRESSION);
             int hidIndex = lengthOfProgression - 2;
-            String[] intMas = generateProgression(firstNum, diffBetweenTwoNum, randomOperation, lengthOfProgression);
-            int secretNumber = (Integer.parseInt(intMas[hidIndex + 1]) + Integer.parseInt(intMas[hidIndex - 1])) / 2;
+            String[] intArray = generateProgression(firstNum, step, randomOperation, lengthOfProgression);
+            int secretNumber = (Integer.parseInt(intArray[hidIndex + 1]) + Integer.parseInt(intArray[hidIndex - 1])) / 2;
             String stringSecretNumber = Integer.toString(secretNumber);
 
-            info[i][0] = massiveWithHiddenSpot(intMas, hidIndex);
+            info[i][0] = massiveWithHiddenSpot(intArray, hidIndex);
             info[i][1] = stringSecretNumber;
         }
         Engine.startGame(rule, info);
