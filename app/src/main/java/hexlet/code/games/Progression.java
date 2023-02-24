@@ -1,7 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Randomizer;
-import hexlet.code.RandomOperationForProgression;
+import hexlet.code.RandomOperation;
 import hexlet.code.Engine;
 
 import static hexlet.code.Engine.MAX_ROUND;
@@ -38,7 +38,7 @@ public class Progression {
         for (var i = 0; i < MAX_ROUND; i++) {
             int firstNum = Randomizer.getRandom();
             int diffBetweenTwoNum = Randomizer.getRandom();
-            var randomOperation = RandomOperationForProgression.getRandomOperationForProgression();
+            var randomOperation = RandomOperation.getRandomOperationForProgression();
             int lengthOfProgression = Randomizer.getRandom(MIN_LENGTH_OF_PROGRESSION, MAX_LENGTH_OF_PROGRESSION);
             int hidIndex = lengthOfProgression - 2;
             String[] intMas = generateProgression(firstNum, diffBetweenTwoNum, randomOperation, lengthOfProgression);
