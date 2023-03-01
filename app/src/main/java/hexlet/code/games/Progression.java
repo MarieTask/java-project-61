@@ -30,10 +30,6 @@ public class Progression {
         }
         return strArr;
     }
-    public static String arrayWithHiddenSpot(String[] intArr, int hiddenSpot) {
-        intArr[hiddenSpot] = "..";
-        return String.join(" ", intArr);
-    }
     public static void fillTheBlank() {
         String rule = "What number is missing in the progression?";
         String[][] info = new String[MAX_ROUND][ANSWER_PLUS_QUESTION];
@@ -43,12 +39,13 @@ public class Progression {
             int step = Randomizer.getRandom();
             var randomOperation = RandomOperation.getRandomOperationForProgression();
             int lengthOfProgression = Randomizer.getRandom(MIN_LENGTH_OF_PROGRESSION, MAX_LENGTH_OF_PROGRESSION);
+            String[] strArr = generateProgression(firstNum, step, randomOperation, lengthOfProgression);
             int hidIndex = Randomizer.getRandom(0, lengthOfProgression - 1);
-            String[] intArr = generateProgression(firstNum, step, randomOperation, lengthOfProgression);
-            int secretNumber = Integer.parseInt(intArr[hidIndex]);
+            String secretNumber = strArr[hidIndex];
+            strArr[hidIndex] = "..";
 
-            info[i][QUESTION] = arrayWithHiddenSpot(intArr, hidIndex);
-            info[i][ANSWER] = String.valueOf(secretNumber);
+            info[i][QUESTION] = String.join(" ", strArr);
+            info[i][ANSWER] = secretNumber;
         }
         Engine.startGame(rule, info);
     }
