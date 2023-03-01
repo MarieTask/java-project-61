@@ -14,22 +14,19 @@ public class Progression {
     static final int MAX_LENGTH_OF_PROGRESSION = 10;
     public static String[] generateProgression(int firstNum, int step, char randomOperation, int length) {
         String[] strArr = new String[length];
-        int[] intArr = new int[length];
-        intArr[0] = firstNum;
-        for (var i = 1; i < intArr.length; i++) {
+        int temp = firstNum;
+        for (var i = 0; i < strArr.length; i++) {
+            strArr[i] = Integer.toString(temp);
             switch (randomOperation) {
                 case '-':
-                    intArr[i] = intArr[i - 1] - step;
+                    temp -= step;
                     break;
                 case '+':
-                    intArr[i] = intArr[i - 1] + step;
+                    temp += step;
                     break;
                 default:
                     break;
             }
-        }
-        for (var j = 0; j < strArr.length; j++) {
-            strArr[j] = String.valueOf(intArr[j]);
         }
         return strArr;
     }
@@ -48,11 +45,10 @@ public class Progression {
             int lengthOfProgression = Randomizer.getRandom(MIN_LENGTH_OF_PROGRESSION, MAX_LENGTH_OF_PROGRESSION);
             int hidIndex = Randomizer.getRandom(0, lengthOfProgression - 1);
             String[] intArr = generateProgression(firstNum, step, randomOperation, lengthOfProgression);
-            int secretNumber = (Integer.parseInt(intArr[hidIndex]));
-            String stringSecretNumber = Integer.toString(secretNumber);
+            int secretNumber = Integer.parseInt(intArr[hidIndex]);
 
             info[i][QUESTION] = arrayWithHiddenSpot(intArr, hidIndex);
-            info[i][ANSWER] = stringSecretNumber;
+            info[i][ANSWER] = String.valueOf(secretNumber);
         }
         Engine.startGame(rule, info);
     }
