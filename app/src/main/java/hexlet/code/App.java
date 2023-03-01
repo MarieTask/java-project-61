@@ -15,6 +15,7 @@ public class App {
     private static final int GCD_GAME = 4;
     private static final int PROGRESSION = 5;
     private static final int PRIME = 6;
+    private static final int EXIT = 0;
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -36,7 +37,8 @@ public class App {
             case GCD_GAME -> GCD.isGCD();
             case PROGRESSION -> Progression.fillTheBlank();
             case PRIME -> Prime.startPrimeGame();
-            default -> System.exit(0);
+            case EXIT -> System.exit(0);
+            default -> System.out.println("This game number doesn't exist. Sorry, try again.");
         }
         scanner.close();
     }
