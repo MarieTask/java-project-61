@@ -14,15 +14,16 @@ public class Engine {
 
         System.out.println(rule);
 
-        for (var action: info) {
-            System.out.println("Question: " + action[0]);
+        for (var roundData: info) {
+            System.out.println("Question: " + roundData[0]);
             System.out.print("Your answer: ");
             var userAnswer = user.next();
-            if (userAnswer.equals(action[1])) {
+            var correctAnswer = roundData[1];
+            if (userAnswer.equals(correctAnswer)) {
                 System.out.println("Correct!");
             } else {
                 System.out.print("'" + userAnswer + "' is wrong answer ;(.");
-                System.out.println("Correct answer was '" + action[1] + "'.");
+                System.out.println("Correct answer was '" + correctAnswer + "'.");
                 System.out.println("Let's try again, " + userName + "!");
                 return;
             }
