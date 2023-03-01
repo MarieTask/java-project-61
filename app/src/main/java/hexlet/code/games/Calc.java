@@ -8,7 +8,7 @@ import static hexlet.code.Engine.MAX_ROUND;
 import static hexlet.code.Engine.ANSWER_PLUS_QUESTION;
 
 public class Calc {
-    public static String count(int randomNum1, int randomNum2, char randomOperation) {
+    public static String calculate(int randomNum1, int randomNum2, char randomOperation) {
 
         var result = 0;
         switch (randomOperation) {
@@ -34,7 +34,7 @@ public class Calc {
             int randomNum2 = Randomizer.getRandom();
             var randomOperation = RandomOperation.getRandomOperation();
             info[i][0] = randomNum1 + " " + randomOperation + " " + randomNum2;
-            info[i][1] = count(randomNum1, randomNum2, randomOperation);
+            info[i][1] = calculate(randomNum1, randomNum2, randomOperation);
         }
         Engine.startGame(rule, info);
     }
