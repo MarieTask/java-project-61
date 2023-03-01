@@ -1,12 +1,14 @@
 package hexlet.code;
 
 public class RandomOperation {
-    public static final char[] SYMBOLS = {'+', '-', '*'};
-    public static final char[] SYMBOLSFORPROGRESSION = {'+', '-'};
+    public static final char[] OPERATIONS = {'+', '-', '*'};
+    public static final char[] OPERATIONSFORPROGRESSION = {'+', '-'};
     public static char getRandomOperation() {
-        return SYMBOLS[Randomizer.getRandom(0, 2)];
+
+        return OPERATIONS[Randomizer.getRandom(0, OPERATIONS.length - 1)];
     }
     public static char getRandomOperationForProgression() {
-        return SYMBOLSFORPROGRESSION[Randomizer.getRandom(0, 1)];
+
+        return OPERATIONSFORPROGRESSION[Randomizer.getRandom(0, OPERATIONSFORPROGRESSION.length - 1)];
     }
 }
