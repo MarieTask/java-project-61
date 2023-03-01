@@ -7,6 +7,8 @@ import static hexlet.code.Engine.MAX_ROUND;
 import static hexlet.code.Engine.ANSWER_PLUS_QUESTION;
 
 public class GCD {
+    private static final int QUESTION = 0;
+    private static final int ANSWER = 1;
     public static int findRod(int randomNumber1, int randomNumber2) {
         while (randomNumber1 != randomNumber2) {
             if (randomNumber1 > randomNumber2) {
@@ -25,8 +27,8 @@ public class GCD {
             int randomNumber1 = Randomizer.getRandom();
             int randomNumber2 = Randomizer.getRandom();
 
-            info[i][0] = randomNumber1 + " " + randomNumber2;
-            info[i][1] = Integer.toString(findRod(randomNumber1, randomNumber2));
+            info[i][QUESTION] = randomNumber1 + " " + randomNumber2;
+            info[i][ANSWER] = Integer.toString(findRod(randomNumber1, randomNumber2));
         }
         Engine.startGame(rule, info);
     }

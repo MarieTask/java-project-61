@@ -7,6 +7,8 @@ import static hexlet.code.Engine.MAX_ROUND;
 import static hexlet.code.Engine.ANSWER_PLUS_QUESTION;
 
 public class Prime {
+    private static final int QUESTION = 0;
+    private static final int ANSWER = 1;
     public static boolean isPrime(int randomNumber) {
         if (randomNumber <= 1) {
             return false;
@@ -25,8 +27,8 @@ public class Prime {
 
         for (var i = 0; i < MAX_ROUND; i++) {
             int randomNumber = Randomizer.getRandom();
-            info[i][0] = "" + randomNumber;
-            info[i][1] = isPrime(randomNumber) ? "yes" : "no";
+            info[i][QUESTION] = "" + randomNumber;
+            info[i][ANSWER] = isPrime(randomNumber) ? "yes" : "no";
         }
         Engine.startGame(rule, info);
     }

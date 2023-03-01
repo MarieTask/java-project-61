@@ -8,6 +8,8 @@ import static hexlet.code.Engine.MAX_ROUND;
 import static hexlet.code.Engine.ANSWER_PLUS_QUESTION;
 
 public class Calc {
+    private static final int QUESTION = 0;
+    private static final int ANSWER = 1;
     public static String calculate(int randomNum1, int randomNum2, char randomOperation) {
 
         var result = 0;
@@ -33,8 +35,8 @@ public class Calc {
             int randomNum1 = Randomizer.getRandom();
             int randomNum2 = Randomizer.getRandom();
             var randomOperation = RandomOperation.getRandomOperation();
-            info[i][0] = randomNum1 + " " + randomOperation + " " + randomNum2;
-            info[i][1] = calculate(randomNum1, randomNum2, randomOperation);
+            info[i][QUESTION] = randomNum1 + " " + randomOperation + " " + randomNum2;
+            info[i][ANSWER] = calculate(randomNum1, randomNum2, randomOperation);
         }
         Engine.startGame(rule, info);
     }

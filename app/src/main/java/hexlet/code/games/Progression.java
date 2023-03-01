@@ -8,6 +8,8 @@ import static hexlet.code.Engine.MAX_ROUND;
 import static hexlet.code.Engine.ANSWER_PLUS_QUESTION;
 
 public class Progression {
+    private static final int QUESTION = 0;
+    private static final int ANSWER = 1;
     static final int MIN_LENGTH_OF_PROGRESSION = 5;
     static final int MAX_LENGTH_OF_PROGRESSION = 10;
     public static String[] generateProgression(int firstNum, int step, char randomOperation, int length) {
@@ -49,8 +51,8 @@ public class Progression {
             int secretNumber = (Integer.parseInt(intArr[hidIndex]));
             String stringSecretNumber = Integer.toString(secretNumber);
 
-            info[i][0] = arrayWithHiddenSpot(intArr, hidIndex);
-            info[i][1] = stringSecretNumber;
+            info[i][QUESTION] = arrayWithHiddenSpot(intArr, hidIndex);
+            info[i][ANSWER] = stringSecretNumber;
         }
         Engine.startGame(rule, info);
     }
