@@ -27,7 +27,7 @@ public class Prime {
 
         for (var i = 0; i < MAX_ROUND; i++) {
             int randomNumber = Randomizer.getRandom();
-            info[i][QUESTION] = "" + randomNumber;
+            info[i][QUESTION] = String.valueOf(randomNumber);
             info[i][ANSWER] = isPrime(randomNumber) ? "yes" : "no";
         }
         Engine.startGame(rule, info);
