@@ -5,6 +5,8 @@ import java.util.Scanner;
 public class Engine {
     public static final int MAX_ROUND = 3;
     public static final int ANSWER_PLUS_QUESTION = 2;
+    public static final int QUESTION = 0;
+    public static final int ANSWER = 1;
     public static void startGame(String rule, String[][] info) {
         System.out.println("Welcome to the Brain Games!");
         Scanner user = new Scanner(System.in);
@@ -15,10 +17,10 @@ public class Engine {
         System.out.println(rule);
 
         for (var roundData: info) {
-            System.out.println("Question: " + roundData[0]);
+            System.out.println("Question: " + roundData[QUESTION]);
             System.out.print("Your answer: ");
             var userAnswer = user.next();
-            var correctAnswer = roundData[1];
+            var correctAnswer = roundData[ANSWER];
             if (userAnswer.equals(correctAnswer)) {
                 System.out.println("Correct!");
             } else {

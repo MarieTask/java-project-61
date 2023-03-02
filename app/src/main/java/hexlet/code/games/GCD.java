@@ -5,10 +5,10 @@ import hexlet.code.Randomizer;
 
 import static hexlet.code.Engine.MAX_ROUND;
 import static hexlet.code.Engine.ANSWER_PLUS_QUESTION;
+import static hexlet.code.Engine.QUESTION;
+import static hexlet.code.Engine.ANSWER;
 
 public class GCD {
-    private static final int QUESTION = 0;
-    private static final int ANSWER = 1;
     public static int findRod(int randomNumber1, int randomNumber2) {
         while (randomNumber1 != randomNumber2) {
             if (randomNumber1 > randomNumber2) {

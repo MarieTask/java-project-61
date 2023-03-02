@@ -5,10 +5,10 @@ import hexlet.code.Engine;
 
 import static hexlet.code.Engine.MAX_ROUND;
 import static hexlet.code.Engine.ANSWER_PLUS_QUESTION;
+import static hexlet.code.Engine.QUESTION;
+import static hexlet.code.Engine.ANSWER;
 
 public class Even {
-    private static final int QUESTION = 0;
-    private static final int ANSWER = 1;
     public static void runEven() {
         String rule = "Answer 'yes' if the number is even, otherwise answer 'no'.";
         String[][] info = new String[MAX_ROUND][ANSWER_PLUS_QUESTION];

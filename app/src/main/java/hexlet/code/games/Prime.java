@@ -5,10 +5,10 @@ import hexlet.code.Engine;
 
 import static hexlet.code.Engine.MAX_ROUND;
 import static hexlet.code.Engine.ANSWER_PLUS_QUESTION;
+import static hexlet.code.Engine.QUESTION;
+import static hexlet.code.Engine.ANSWER;
 
 public class Prime {
-    private static final int QUESTION = 0;
-    private static final int ANSWER = 1;
     public static boolean isPrime(int randomNumber) {
         if (randomNumber <= 1) {
             return false;

@@ -6,10 +6,10 @@ import hexlet.code.Engine;
 
 import static hexlet.code.Engine.MAX_ROUND;
 import static hexlet.code.Engine.ANSWER_PLUS_QUESTION;
+import static hexlet.code.Engine.QUESTION;
+import static hexlet.code.Engine.ANSWER;
 
 public class Progression {
-    private static final int QUESTION = 0;
-    private static final int ANSWER = 1;
     static final int MIN_LENGTH_OF_PROGRESSION = 5;
     static final int MAX_LENGTH_OF_PROGRESSION = 10;
     public static String[] generateProgression(int firstNum, int step, char randomOperation, int length) {
