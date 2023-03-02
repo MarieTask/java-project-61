@@ -24,7 +24,7 @@ public class Calc {
                 result = randomNum1 * randomNum2;
                 break;
             default:
-                System.out.println("Sorry, this operation doesn't exist. Fix the code");
+                System.out.println("Sorry, this operation doesn't exist. Fix the code.");
                 System.exit(0);
                 break;
         }

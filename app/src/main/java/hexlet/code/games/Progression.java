@@ -25,6 +25,8 @@ public class Progression {
                     temp += step;
                     break;
                 default:
+                    System.out.println("Sorry, this operation doesn't exist. Fix the code.");
+                    System.exit(0);
                     break;
             }
         }
