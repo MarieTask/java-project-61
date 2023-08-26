@@ -1,4 +1,12 @@
 ### Brain Games
+Brain Games is a set of five console games based on popular mobile brain training apps. Each game asks questions that need correct answers. After three correct answers, the game is considered to be completed. Wrong answers end the game and offer to play it again. 
+
+Games:
+1) Calculator. Arithmetic expressions to be calculated.
+2) Progression. Search for missing numbers in a sequence of numbers.
+3) Definition of an even number.
+4) Determination of the best common divisor.
+5) Definition of a prime number.
 
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/MarieTask/java-project-61/workflows/hexlet-check/badge.svg)](https://github.com/MarieTask/java-project-61/actions)<a href="https://codeclimate.com/github/MarieTask/java-project-61/maintainability"><img src="https://api.codeclimate.com/v1/badges/d3be10858f3ae4e331d0/maintainability" /></a>
